@@ -1,5 +1,6 @@
 package bridge.view;
 
+import bridge.constant.GameCommand;
 import bridge.domain.Bridge;
 import camp.nextstep.edu.missionutils.Console;
 
@@ -33,10 +34,14 @@ public class InputView {
     /**
      * 사용자가 게임을 다시 시도할지 종료할지 여부를 입력받는다.
      */
-    public static String readGameCommand() {
-        return null;
+    public static GameCommand readGameCommand() {
+        return GameCommand.from(readLine());
     }
 
+    /**
+     * 입력 시 사용하는 기능
+     * @return 입력 값의 공배 여부를 검증한 값 반환
+     */
     private static String readLine() {
         String input = Console.readLine().trim();
         validateHasInput(input);
