@@ -47,4 +47,11 @@ public class Bridge {
         }
     }
 
+    public boolean equals(int index, String moving) {
+        return bridge.get(index).equals(moving);
+    }
+
+    public int size() {
+        return bridge.size();
+    }
 }
