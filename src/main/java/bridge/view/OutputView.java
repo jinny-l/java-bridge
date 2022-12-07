@@ -12,6 +12,13 @@ public class OutputView {
     private static final String BLOCK_DELIMITER = " | ";
 
     /**
+     * 에러 메시지를 출력할 때 사용하는 기능
+     */
+    public static void printError(String message) {
+        System.out.println(message);
+    }
+
+    /**
      * 게임 시작 시 출력하는 메서드
      */
     public static void printStart() {

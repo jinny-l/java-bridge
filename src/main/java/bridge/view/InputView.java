@@ -1,5 +1,6 @@
 package bridge.view;
 
+import bridge.constant.ErrorMessage;
 import bridge.constant.GameCommand;
 import bridge.domain.Bridge;
 import camp.nextstep.edu.missionutils.Console;
@@ -17,7 +18,7 @@ public class InputView {
         try {
             return Integer.parseInt(readLine());
         } catch (NumberFormatException ne) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.INVALID_INPUT_TYPE.toString());
         }
     }
 
@@ -50,7 +51,7 @@ public class InputView {
 
     private static void validateHasInput(String input) {
         if (input.isEmpty()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.EMPTY_INPUT.toString());
         }
     }
 }

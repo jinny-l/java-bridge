@@ -2,6 +2,7 @@ package bridge.domain;
 
 import bridge.BridgeMaker;
 import bridge.BridgeNumberGenerator;
+import bridge.constant.ErrorMessage;
 import java.util.List;
 
 public class Bridge {
@@ -37,13 +38,13 @@ public class Bridge {
 
     public static void validateMoving(String moving) {
         if (!moving.equals(UP_BRIDGE_LETTER) && !moving.equals(DOWN_BRIDGE_LETTER)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.INVALID_MOVING_INPUT.toString());
         }
     }
 
     private void validateSize(int size) {
         if (size < MIN_SIZE || size > MIN_SIZE) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.INVALID_BRIDGE_SIZE.toString());
         }
     }
 
