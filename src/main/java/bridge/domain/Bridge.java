@@ -35,6 +35,12 @@ public class Bridge {
         return DOWN_BRIDGE_LETTER;
     }
 
+    public static void validateMoving(String moving) {
+        if (!moving.equals(UP_BRIDGE_LETTER) && !moving.equals(DOWN_BRIDGE_LETTER)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
     private void validateSize(int size) {
         if (size < MIN_SIZE || size > MIN_SIZE) {
             throw new IllegalArgumentException();
