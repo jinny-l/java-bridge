@@ -26,7 +26,7 @@ public class InputView {
      * 사용자가 이동할 칸을 입력받는다.
      */
     public static String readMoving() {
-        System.out.printf("%n이동할 칸을 입력해주세요. (위: %s, 아래: %s)%n", Bridge.upBridgeLetter(), Bridge.downBridgeLetter());
+        System.out.printf("이동할 칸을 입력해주세요. (위: %s, 아래: %s)%n", Bridge.upBridgeLetter(), Bridge.downBridgeLetter());
         String input = readLine();
         Bridge.validateMoving(input);
         return input;
@@ -36,12 +36,13 @@ public class InputView {
      * 사용자가 게임을 다시 시도할지 종료할지 여부를 입력받는다.
      */
     public static GameCommand readGameCommand() {
+        System.out.printf("게임을 다시 시도할지 여부를 입력해주세요. (재시도: %s, 종료: %s)%n", GameCommand.RETRY, GameCommand.QUIT);
         return GameCommand.from(readLine());
     }
 
     /**
      * 입력 시 사용하는 기능
-     * @return 입력 값의 공배 여부를 검증한 값 반환
+     * @return 입력 값의 공백 여부를 검증한 값 반환
      */
     private static String readLine() {
         String input = Console.readLine().trim();
